@@ -2,5 +2,3 @@ server:
     port: 7040
     servlet:
         context-path: /music
-
-
