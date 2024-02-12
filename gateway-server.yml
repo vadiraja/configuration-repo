@@ -33,11 +33,9 @@ spring:
         - id: task-scheduler-route
           uri: lb://task-scheduler-service
           predicates:
-            - Path=/task-sch
-              - AddResponseHeader=X-Powered-By, Vadiraja
-
-            # Add services hereeduler/**
+            - Path=/task-scheduler/**
           filters:
+            - AddResponseHeader=X-Powered-By, Vadiraja
 
 management:
   endpoints:
