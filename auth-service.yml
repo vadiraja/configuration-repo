@@ -1,0 +1,28 @@
+server:
+    port: 7090
+    servlet:
+        context-path: /auth
+jwt:
+  auth:
+    converter:
+      resource-id: authenticationClientId
+keycloak:
+  realm: bisky-music
+  domain: keycloak.codewithbisky.com
+  adminClientId: admin-cli
+  adminClientSecret: 3e3e3e3e-3e3e-3e3e-3e3e-3e3e3e3e3e3e
+  client: authenticationClientId
+  urls:
+    auth: https://${keycloak.domain}
+spring:
+  profiles:
+    active: dev
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.urls.auth}/realms/${keycloak.realm}
+
+
+
+
